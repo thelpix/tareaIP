@@ -1,3 +1,5 @@
+module Practica4 where
+
 factorial :: Integer -> Integer 
 factorial a 
     | a == 0 = 1

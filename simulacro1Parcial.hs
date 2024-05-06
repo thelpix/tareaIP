@@ -1,4 +1,5 @@
-import System.Console.Terminfo (functionKey)
+module Simulacro1Parcial where 
+    
 noRepetir :: [(String,String)] -> Bool
 noRepetir [(x1,x2)] = x1/=x2
 

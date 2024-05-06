@@ -13,7 +13,8 @@ principio (x:xs) = x:principio xs
 
 reverso :: (Eq t) => [t] -> [t]
 reverso [] = []
-reservo xs = last xs : reverso (init xs)
+reverso xs = ultimo xs : reverso (principio xs)
+
 
 pertenece :: (Eq t) => t -> [t] -> Bool
 pertenece _ [] = False --si x sigue estando y el conjunto y esta vacío, ya no hay numeros, entonces nunca pertenecio
@@ -57,6 +58,8 @@ mismosElementos :: (Eq t) => [t] -> [t] -> Bool
 mismosElementos x y = incluye x y && incluye y x --Si todos los elementos de x estan en el conjunto y, y viceversa
 
 --ej 9
+
+
 
 --capicua :: (Eq t) => [t] -> Bool
 
