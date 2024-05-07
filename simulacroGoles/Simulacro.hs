@@ -73,5 +73,5 @@ porcentajeDeGoles a r x = golesArqueros a r x / fromIntegral (golesTitular x) * 
 --[("Sacachispas", "Neyder Aragon"), ("Fenix", "Nahuel Galardi"), ("Buenos Aires", "Gabriel")] [1,5,3]
 vallaMenosVencida :: [(String, String)] -> [Int] -> String
 vallaMenosVencida [(a,b)] _ = b
-vallaMenosVencida ((a,b):(c,d):xs) (y1:y2:ys) | y1 > y2 = vallaMenosVencida ((a,b):xs) (y1:ys)
+vallaMenosVencida ((a,b):(c,d):xs) (y1:y2:ys) | y1 < y2 = vallaMenosVencida ((a,b):xs) (y1:ys)
                                               | otherwise = vallaMenosVencida  ((c,d):xs) (y2:ys)

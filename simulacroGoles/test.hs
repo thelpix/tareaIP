@@ -29,5 +29,5 @@ testPorcentajes = test[
     ]
 
 testVallaMenos = test[
-        "mayor fenix" ~:vallaMenosVencida [("Sacachispas", "Neyder Aragon"), ("Fenix", "Nahuel Galardi"), ("Buenos Aires", "Gabriel")] [1,5,3] ~?= "Nahuel Galardi"
+        "menor Neyder" ~:vallaMenosVencida [("Sacachispas", "Neyder Aragon"), ("Fenix", "Nahuel Galardi"), ("Buenos Aires", "Gabriel")] [1,5,3] ~?= "Neyder Aragon"
     ]
