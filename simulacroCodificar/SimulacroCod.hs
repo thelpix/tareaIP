@@ -38,8 +38,16 @@ laQueMasHayQueCodificar frase mapeo = laQueMasHayQueCodificarAux frase frase map
 -- EJ 4 
 
 --si la letra de la frase, no esta en el mapeo, el res es la letra de la frase, mostrar todas las letras que no esten
---si esta la frase en el mapeo, 
---codificarFrase :: [Char] -> [(Char, Char)] -> [Char]
---codificarFrase
+--si esta la letra de la frase en el mapeo, entonces ['a','y','u','d','a','d'] -> [('a','x'),('d','e'),('z','a')),('y','m'),('p','q')] -> ['x','m','u','e','x','e']
+
+reemplazar :: Char -> [(Char, Char)] -> Char -- 'a' -> 'e'
+reemplazar letra ((x,y):xs) | letra == x = y
+                            | otherwise = reemplazar letra xs 
+
+codificarFrase :: [Char] -> [(Char, Char)] -> [Char]
+codificarFrase [] mapeo = []
+codificarFrase (a:as) mapeo | hayQueCodificar a mapeo = reemplazar a mapeo : codificarFrase as mapeo --reemplazar ya que a pertenece al mapeo
+                            | otherwise = a:codificarFrase as mapeo
+
  
 
