@@ -1,4 +1,43 @@
+import math
 import random
+
+#ej 1
+def imprimir_hola_mundo():
+    print("Hola Mundo");
+
+#ej 2
+def imprimir_un_verso():
+    print("Hon'\nPlease forgive me if I ever did you wrong\nI'll be your candle; burn me upside down\nFrom now on, I won't sleep on my arms")
+
+#ej 3
+def raizDe2():
+    res = round(math.sqrt(2), 4)
+    return res
+
+#ej 4
+def factoria_2() -> int:
+    res = math.factorial(2)
+    return res
+
+#ej5
+def perimetro() -> float:
+    res = 2*math.pi
+    return res
+
+#ej 6
+def imprimir_saludo(nombre: str):
+    print("Hola",nombre)
+
+#ej 7
+def raiz_cuadrada_de(numero: int):
+    res = math.sqrt(numero)
+    return res
+
+#ej 8
+def fahrenheit_a_celsius(t: float) -> float:
+    res = (t - 32) / 1.8
+    return res
+
 
 def poner_pos_pares_en_cero(s: list[int]):
     i:int = 0
@@ -59,7 +98,7 @@ def monedero() -> list[tuple[str,int]]:
 
 #print(monedero())
 
-def siete_medio() -> list[int]:
+'''def siete_medio() -> list[int]:
     res: list[int] = []
     carta: int = random.radint(1,12)
     ṕuntos: float = 0
@@ -72,10 +111,10 @@ def siete_medio() -> list[int]:
         seguir: str = input("Apriete Y si quiere seguir: ")
         while seguir == "Y":
                   
-
-    else:
-        carta = random.radint(1,12)
-
+#
+#    else:
+#        carta = random.radint(1,12)
+'''
 
 
     
