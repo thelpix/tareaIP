@@ -38,6 +38,81 @@ def fahrenheit_a_celsius(t: float) -> float:
     res = (t - 32) / 1.8
     return res
 
+#ej 9
+def imprimir_dos_veces(estribillo: str):
+    res :str = (estribillo+"\n")*2
+    return res
+
+#ej 10
+def es_multiplo_de(n: int, m: int) -> bool:
+    res : bool
+    while n >= m:
+        n -= m
+    if n == 0:
+        res = True
+    else:
+        res = False
+    return res
+    #para comprobar si es multiplo, puedes sacar el resto de n-m y si da 0 es multiplo
+
+#ej 11
+def es_par(numero: int) -> bool:
+    res : bool = False
+    if es_multiplo_de(numero, 2):
+        res = True
+    return res
+
+#ej 12
+def cantidad_de_pizzas(comensales: int, min_cant_de_porciones: int) -> int:
+    porciones_totales = comensales * min_cant_de_porciones
+    res : int = 1
+    if porciones_totales == 0:
+        res = 0
+    while porciones_totales >= 8:
+        porciones_totales -= 8
+        res += 1
+    return res
+
+#ej 13-14
+def alguno_es_0(numero1: float, numero2: float):
+    return numero1 == 0 or numero2 == 0 #puedes asignarle un argumento al return
+def ambos_son_0(numero1: float, numero2: float):
+    return numero1 == 0 and numero2 == 0
+
+#ej 15
+def es_nombre_largo(nombre: str) -> bool:
+    return len(nombre) <= 8 and len(nombre) >= 3
+
+#ej 16
+def es_bisiesto(año: int) -> bool:
+    return (año % 400 == 0) or ((año % 4 == 0) and not (año % 100 == 0))
+
+#ej 17
+def peso_pino(altura_pino:int) -> int:
+    if altura_pino <= 3:
+        res = 3*(altura_pino*100)
+    else:
+        altura_pino -= 3
+        res = 900 + (altura_pino*100)*2
+    return res
+
+def es_peso_util(peso_pino: int) -> bool:
+    return 400 <= peso_pino <= 1000
+
+def sirve_pino(altura_pino: int) -> bool:
+    return es_peso_util(peso_pino(altura_pino))
+
+def todos_los_pinos(todos_pinos: list[int]) -> list[bool]: #de una lista de pinos devuelve los que son validos y no
+    res : list[bool] = []
+    for i in range(len(todos_pinos)):
+        res.append(sirve_pino(todos_pinos[i]))
+    return res
+
+#ej 18
+
+
+
+
 
 def poner_pos_pares_en_cero(s: list[int]):
     i:int = 0
@@ -45,6 +120,7 @@ def poner_pos_pares_en_cero(s: list[int]):
         if i % 2 == 0:
             s[i] = 0
         i += 1
+
 
 def poner_pos_pares_en_cero_v2(s: list[int]) -> list[int]:
     res: list[int] = s.copy()    #creo una lista que es identica a la lista s
