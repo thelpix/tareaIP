@@ -109,9 +109,141 @@ def todos_los_pinos(todos_pinos: list[int]) -> list[bool]: #de una lista de pino
     return res
 
 #ej 18
+def devolver_el_doble_si_es_par(numero: int) -> int:
+    res : int = 0
+    if numero % 2 == 0:
+        res = numero*2
+    else:
+        res = numero
+    return res
 
+#ej 19
+def devolver_el_valor_si_es_par_sino_el_que_sigue_v1(numero: int) -> int:
+    res : int = 0
+    if numero % 2 == 0:
+        res = numero
+    else:
+        res = (numero+1)
+    return res
+def devolver_el_valor_si_es_par_sino_el_que_sigue_v2(numero: int) -> int:
+    res : int = 0
+    if numero % 2 == 0:
+        res = numero
+    if not (numero % 2 == 0):
+        res = (numero+1)
+    return res
+##funcionan iguales
+#ej 20
+def devolver_el_doble_si_es_multiplo3_el_triple_si_es_multiplo9_v1(numero: int) -> int: ##if-then-else
+    if es_multiplo_de(numero, 9):
+        return 3*numero
+    elif es_multiplo_de(numero, 3):
+        return 2*numero
+    else:
+        return numero
+    
+def devolver_el_doble_si_es_multiplo3_el_triple_si_es_multiplo9_v2(numero: int) -> int: ##2 if
+    if es_multiplo_de(numero, 9):
+        return 3*numero
+    if es_multiplo_de(numero, 3):
+        return 2*numero
+    else:
+        return numero
 
+def devolver_el_doble_si_es_multiplo3_el_triple_si_es_multiplo9_v3(numero: int) -> int: ##con operacion logica
+    if es_multiplo_de(numero, 3) and not es_multiplo_de(numero, 9):
+        return 2*numero
+    elif es_multiplo_de(numero, 9):
+        return 3*numero
+    return numero
 
+#ej 21
+def lindo_nombre(nombre: str) -> str:
+    if len(nombre) >= 5:
+        return "Tu nombre tiene muchas letras!"
+    else:
+        return "Tu nombre tiene menos de 5 caracteres"
+
+#ej 22
+def elRango(numero:int) -> str:
+    if numero < 5:
+        print("Menor a 5")
+    if 10<= numero <= 20:
+        print("Entre 10 y 20")
+    if numero > 20:
+        print("Mayor a 20")
+
+def trabajas_o_no(sexo: str, edad: int) -> str:
+    if (sexo == "F" and 18<= edad <60) or (sexo == "M" and 18<= edad < 65):
+        print("Te toca trabajar")
+    else:
+        print("Andad de vacaciones")
+
+#ej 23
+def imprimir_1_al_10() -> str:
+    i = 1
+    while i <= 10:
+        print(i)
+        i += 1
+
+#ej 24
+def imprimir_pares_10_al_40() -> str:
+    i = 10
+    while i <= 40:
+        if (es_multiplo_de(i, 2)):
+            print(i)
+        i += 1
+
+#ej 25
+def eco_10_veces() -> str:
+    i = 1
+    while i <= 10:
+        print("eco")
+        i += 1
+#ej 26
+def despegue(numero: int) -> str:
+    while numero >= 1:
+        print(numero)
+        numero -= 1
+    print("Despegue")
+
+#ej 27
+def viaje_en_el_tiempo(año_partida :int, año_llegada: int) -> str:
+    while año_partida > año_llegada:
+        año_partida -= 1
+        print("Viajo un anio al pasado, estamos en el anio:",año_partida)
+#ej 28
+def viaje_hasta_aristoteles(año_partida: int) -> str:
+    while año_partida >= -384 and (año_partida-20) > -384:
+        año_partida -= 20
+        if año_partida < 0:
+            print("Viajo 20 anios al pasado, estamos en el anio:",año_partida*(-1), "a.C")
+        else: 
+            print("Viajo 20 anios al pasado, estamos en el anio:",año_partida)
+
+#ej 29
+def imprimir_1_al_10_v2() -> str:
+    for i in range(1, 11, 1):
+        print(i)
+def imprimir_pares_10_al_40_v2() -> str:
+    for i in range(10, 41, 2):
+        print(i)
+def eco_10_veces_v2() -> str:
+    for i in range(0, 10, 1):
+        print("eco")
+def despegue_v2(numero: int) -> str:
+    for i in range(numero, 0, -1):
+        print(i)
+    print("Despegue")
+def viaje_en_el_tiempo_v2(año_partida: int, año_llegada: int) -> str:
+    for i in range(año_partida-1, año_llegada-1, -1):
+        print("Viajo un anio al pasado, estamos en el anio:",i)
+def viaje_hasta_aristoteles_v2(año_partida: int) -> str:
+    for i in range(año_partida, -385, -20):
+        if i < 0:
+            print("Viajo 20 anios al pasado, estamos en el anio:",i*(-1), "a.C")
+        else: 
+            print("Viajo 20 anios al pasado, estamos en el anio:",i)
 
 
 def poner_pos_pares_en_cero(s: list[int]):
