@@ -245,7 +245,6 @@ def viaje_hasta_aristoteles_v2(año_partida: int) -> str:
         else: 
             print("Viajo 20 anios al pasado, estamos en el anio:",i)
 
-
 def poner_pos_pares_en_cero(s: list[int]):
     i:int = 0
     while i < len(s):
