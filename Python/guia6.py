@@ -279,29 +279,11 @@ res = []
 
 #ejercicio 4.1
 
-def nombres_estudiantes() -> list[str]:
-    res: list[str] = []
-    nombres:str = input("Escribí el nombre de tus estudiantes: ")
-    while nombres != "listo": #el bucle se vuelve a ejecutar si mismo (no como el if que una vez ejecutado sigue la funcion)
-        res.append(nombres)
-        nombres = input("Escribí el nombre de tus estudiantes: ")
-    return res
+
 
 #print(nombres_estudiantes())
 
-def monedero() -> list[tuple[str,int]]:
-    res: list[tuple[str,int]] = []
-    creditos: str = input("Ingrese C para cargar, D para descontar, X para finalizar: ")
-    while creditos != "X":
-        if creditos == "C":
-            pesos: int = int(input("Ingrese el monto a cargar: "))
-            res.append((creditos, pesos))
-        elif creditos == "D":
-            pesos: int = int(input("Ingrese el monto a descontar: ")) * (-1) 
-            res.append((creditos, pesos))
-        creditos: str = input("Ingrese C para cargar, D para descontar, X para finalizar: ")
-    
-    return res
+
 
 #print(monedero())
 
